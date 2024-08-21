@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <title>Salom dunyo</title>
+</head>
+<style>
+body{
+	background-color: #031321;
+}
+.container{
+	width: 1000px;
+	height: 600px;
+	margin: 0 auto;
+	text-align: center;
+}
+th{
+	border: 1px solid #00e3ff;
+	color: #00e3ff;
+	padding: 5px;
+}
+table{
+	text-align: center;
+	margin: 0 auto;
+	cursor: alias;
+}
+td {
+    color: #00e3ff;
+}
+table tr:nth-child(odd){
+	background-color: seagreen;
+}
+table tr{
+	background-color: #0d0081;
+}
+table tr:nth-child(odd):hover{
+	background-color: green;
+}
+table tr:hover{
+	background-color: rgba(68,68,68,.7);
+}
+</style>
+<body>
+    <div class="container">
+        <form method="get">
+            <input type="text" name="qidir1">
+            <button type="submit">Qidirish</button>
+        </form>
+        <table class="table table-bordered table-dark table-striped table-hover">
+            <tr>
+                <th>T/R</th>
+                <th>Nom</th>
+                <th>Muallif</th>
+                <th>Janr</th>
+                <th>Sahifa</th>
+                <th>Turi</th>
+            </tr>
+            {% for i in kitob6 %}
+            <tr>
+                <td>{{i.id}}</td>
+                <td>{{i.nom}}</td>
+                <td>{{i.muallif}}</td>
+                <td>{{i.janr}}</td>
+                <td>{{i.sahifa}}</td>
+                <td>{{i.turi}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
